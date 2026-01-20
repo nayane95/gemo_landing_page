@@ -50,7 +50,7 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-[var(--panel)] border border-[rgba(255,255,255,0.05)] p-8 md:p-12 rounded-lg">
+    <div className="bg-(--panel) border border-[rgba(255,255,255,0.05)] p-8 md:p-12 rounded-lg">
       <h3 className="text-xl font-serif text-white mb-8">Private Consultation Request</h3>
       
       <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
@@ -60,7 +60,7 @@ export default function ContactForm() {
             {...register('fullName')}
             placeholder="Full Name"
             className={cn(
-              "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors",
+              "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
               errors.fullName && "border-red-500"
             )}
           />
@@ -74,7 +74,7 @@ export default function ContactForm() {
               {...register('contactNumber')}
               placeholder="Contact Number"
               className={cn(
-                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors",
+                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
                 errors.contactNumber && "border-red-500"
               )}
             />
@@ -87,7 +87,7 @@ export default function ContactForm() {
               {...register('email')}
               placeholder="Email Address"
               className={cn(
-                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors",
+                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
                 errors.email && "border-red-500"
               )}
             />
@@ -99,7 +99,7 @@ export default function ContactForm() {
         <div>
           <select
             {...register('areaOfInterest')}
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors"
+            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors"
           >
             <option value="">Select Area Of Interest</option>
             <option value="Investment Grade">Investment Grade Gems</option>
@@ -112,7 +112,7 @@ export default function ContactForm() {
         <div>
           <select
             {...register('budgetRange')}
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors"
+            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors"
           >
             <option value="">Select Budget Range</option>
             <option value="10k-50k">$10,000 - $50,000</option>
@@ -127,7 +127,7 @@ export default function ContactForm() {
           <textarea
             {...register('inquiry')}
             placeholder="Your Inquiry (Optional)"
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors min-h-[100px]"
+            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors min-h-[100px]"
           />
         </div>
 
@@ -135,7 +135,7 @@ export default function ContactForm() {
           <textarea
             {...register('additionalReq')}
             placeholder="Additional Requirement (Optional)"
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-[var(--gold)] transition-colors min-h-[100px]"
+            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors min-h-[100px]"
           />
         </div>
 
@@ -143,7 +143,7 @@ export default function ContactForm() {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="w-full bg-[var(--gold)] text-black font-bold uppercase tracking-widest py-4 rounded flex items-center justify-center gap-2 hover:bg-[#bd9b4c] transition-colors disabled:opacity-70"
+          className="w-full bg-(--gold) text-black font-bold uppercase tracking-widest py-4 rounded flex items-center justify-center gap-2 hover:bg-[#bd9b4c] transition-colors disabled:opacity-70"
         >
           {isSubmitting ? (
             <>
@@ -157,7 +157,7 @@ export default function ContactForm() {
         </button>
 
         <div className="text-center">
-          <p className="text-xs text-[var(--muted)] flex items-center justify-center gap-2">
+          <p className="text-xs text-(--muted) flex items-center justify-center gap-2">
             <Lock size={12} /> All inquiries are kept strictly confidential
           </p>
         </div>

@@ -28,13 +28,13 @@ export default function Hero() {
           <h1 className="text-4xl md:text-6xl lg:text-8xl font-light text-white mb-5 leading-tight tracking-widest">
             Unearth the <span className="italic text-white/70 font-semibold">Exceptional</span>
           </h1>
-          <p className="max-w-5xl mx-auto text-sm md:text-2xl text-[var(--muted)]/90 mb-9 font-light leading-relaxed">
+          <p className="max-w-5xl mx-auto text-sm md:text-2xl text-(--muted)/90 mb-9 font-light leading-relaxed">
             From the silent depths of the earth to the pinnacle of timeless luxury, we bring you gemstones that capture the soul of the earth.
           </p>
 
           <Link
             href="/collections"
-            className="inline-block px-16 py-8 border border-[var(--gold)] text-[var(--gold)] hover:bg-[var(--gold)] hover:text-black transition-all duration-300 text-xs md:text-xl lg:text-2xl tracking-[0.3em] uppercase font-semibold mt-30"
+            className="inline-block px-16 py-8 border border-(--gold) text-(--gold) hover:bg-(--gold) hover:text-black transition-all duration-300 text-xs md:text-xl lg:text-2xl tracking-[0.3em] uppercase font-semibold mt-30"
           >
             Explore Collection
           </Link>

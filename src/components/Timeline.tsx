@@ -1,54 +1,65 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Gem, Scale, Award, Scissors } from 'lucide-react';
+import { Gem, Mountain, Check } from 'lucide-react';
 
 const steps = [
   { 
     title: 'Precision Cutting', 
-    subtitle: 'Make gemstone shine from nature to art service',
-    icon: Scissors 
+    subtitle: 'Master lapidaries unlock the hidden fire with each stone.',
+    icon: null
   },
   { 
     title: 'Ethical Sourcing', 
-    subtitle: 'Hand-picked electronics for conflict-free mining',
-    icon: Scale 
+    subtitle: 'Hand - selected raw minerals from conflict free mines across the globe',
+    icon: Mountain 
   },
   { 
     title: 'GIA Certifications', 
-    subtitle: 'Fully authenticated with globally recognized labs',
-    icon: Award 
+    subtitle: 'Rigorous grading to guarantee authenticity, clarity and value.',
+    icon: Check 
   },
   { 
     title: 'The Final Cutting', 
-    subtitle: 'Master polish to guarantee perfection and brilliance',
+    subtitle: 'Rigorous grading to guarantee authenticity, clarity and value.',
     icon: Gem 
   },
 ];
 
 export default function Timeline() {
   return (
-    <div className="py-12">
-      <div className="relative">
-        {/* Connecting Line */}
-        <div className="absolute top-8 left-0 w-full h-px bg-[rgba(255,255,255,0.1)] hidden md:block"></div>
+    <div className="py-20 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-6">
+        {/* Connecting Line: Start at 12.5% (center of 1st) and end at 87.5% (center of 4th) */}
+        <div className="absolute top-12 left-[12.5%] w-[75%] h-px bg-(--gold)/20 hidden md:block"></div>
         
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 relative z-10">
           {steps.map((step, index) => (
             <motion.div 
               key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="relative flex flex-col items-center text-center group"
+              transition={{ delay: index * 0.15, duration: 0.6 }}
+              className="flex flex-col items-center text-center group"
             >
-              <div className="w-16 h-16 rounded-full border border-[var(--gold)] bg-[#040e1a] flex items-center justify-center text-[var(--gold)] mb-6 relative z-10 group-hover:bg-[var(--gold)] group-hover:text-black transition-all duration-500">
-                <step.icon strokeWidth={1.5} size={28} />
+              {/* Double Circle Container */}
+              <div className="relative mb-10">
+                {/* Outer Circle - Larger with bg to hide line */}
+                <div className="w-24 h-24 rounded-full border border-(--gold)/30 flex items-center justify-center bg-[#020509] transition-transform duration-500 group-hover:scale-110">
+                  {/* Inner Circle - Smaller to increase gap */}
+                  <div className="w-14 h-14 rounded-full border border-(--gold)/80 flex items-center justify-center bg-transparent">
+                    {step.icon && (
+                      <step.icon className="text-(--gold)" size={24} strokeWidth={1} />
+                    )}
+                  </div>
+                </div>
               </div>
               
-              <h4 className="text-lg font-serif text-white mb-2">{step.title}</h4>
-              <p className="text-xs text-[var(--muted)] leading-relaxed max-w-[200px]">
+              <h4 className="text-xl md:text-2xl font-bold text-white/75 mb-4 tracking-wide font-inter">
+                {step.title}
+              </h4>
+              <p className="text-[12px] text-(--muted) leading-relaxed max-w-[260px] opacity-80 font-medium tracking-tight font-inter">
                 {step.subtitle}
               </p>
             </motion.div>

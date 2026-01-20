@@ -16,11 +16,11 @@ export default function SectionHeading({
   return (
     <div className={cn("mb-12", centered && "text-center", className)}>
       {subtitle && (
-        <span className="text-[var(--gold)] text-xs font-bold uppercase tracking-widest mb-3 block">
+        <span className="text-(--gold) text-xs font-bold uppercase tracking-widest mb-3 block">
           {subtitle}
         </span>
       )}
-      <h2 className="text-3xl md:text-4xl font-serif text-[var(--text)]">
+      <h2 className="text-3xl md:text-4xl font-serif text-(--text)">
         {title}
       </h2>
     </div>
