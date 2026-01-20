@@ -13,7 +13,7 @@
 
 :root {
   /* Colors */
-  --bg: #030a13; /* Deep navy almost black */
+  --bg: #01111d; /* Deep navy almost black */
   --panel: rgba(255, 255, 255, 0.03);
   --panel-hover: rgba(255, 255, 255, 0.06);
   --gold: #d1a109;

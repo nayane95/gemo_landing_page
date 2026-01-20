@@ -5,7 +5,6 @@ import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { Gemstone } from '@/types';
 import { cn, formatPrice } from '@/lib/utils';
-import { ArrowRight } from 'lucide-react';
 
 interface GemCardProps {
   gem: Gemstone;
@@ -14,42 +13,40 @@ interface GemCardProps {
 
 export default function GemCard({ gem, className }: GemCardProps) {
   return (
-    <Link href={`/collections/${gem.slug}`} className={cn('group block', className)}>
-      <motion.div
-        whileHover={{ y: -10 }}
-        className="relative aspect-4/5 overflow-hidden bg-[radial-gradient(ellipse_at_center,var(--tw-gradient-stops))] from-slate-900 to-black border border-white/5 group-hover:border-(--gold)/50 transition-colors duration-500"
+    <Link href={`/collections/${gem.slug}`} className={cn('block h-full', className)}>
+      <motion.div 
+        whileHover={{ y: -5 }}
+        className="relative flex h-full flex-col overflow-hidden bg-[#050a12]"
       >
-        {/* Glow Effect Background */}
-        <div className="absolute inset-0 opacity-0 group-hover:opacity-20 transition-opacity duration-700 bg-[radial-gradient(circle_at_center,var(--gold),transparent_70%)]" />
-
-        {/* Image */}
-        <div className="absolute inset-0 flex items-center justify-center p-8">
-          <div className="relative w-full h-full">
-            <Image
-              src={gem.image}
-              alt={gem.name}
-              fill
-              className="object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
-              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-            />
+        {/* Image Container - Aspect 3/4, dark bg */}
+        <div className="relative aspect-3/4 overflow-hidden bg-[#020509]">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative h-full w-full">
+              <Image
+                src={gem.image}
+                alt={gem.name}
+                fill
+                unoptimized
+                className="object-contain drop-shadow-2xl transition-transform duration-700 group-hover:scale-110"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
+            </div>
           </div>
-        </div>
 
-        {/* Content Overlay - Always visible at bottom */}
-        <div className="absolute bottom-0 left-0 right-0 p-6 bg-linear-to-t from-black via-black/80 to-transparent pt-12">
-          <div className="flex justify-between items-end">
-            <div>
-              <h3 className="text-xl font-serif text-white mb-1 group-hover:text-(--gold) transition-colors">
+          {/* Overlay Gradient & Content */}
+          <div className="absolute inset-x-0 bottom-0 bg-linear-to-t from-[#01111d] via-[#01111d]/80 to-transparent p-6 pt-32">
+            <div className="flex items-baseline justify-between gap-4 mb-3 border-none">
+              <h3 className="text-xl font-medium text-white tracking-tight font-inter">
                 {gem.name}
               </h3>
-              <p className="text-xs text-(--muted) uppercase tracking-wider">
-                {gem.specs.origin}
+              <p className="text-[12px] font-semibold text-(--gold) whitespace-nowrap font-inter">
+                From {formatPrice(gem.priceFrom)}
               </p>
             </div>
-            <div className="text-right">
-              <p className="text-[10px] text-(--muted) mb-1">Starting from</p>
-              <p className="text-(--gold) font-medium">
-                {formatPrice(gem.priceFrom)}
+            {/* Description with fixed min-height for horizontal alignment across grid rows */}
+            <div className="min-h-8">
+              <p className="text-[12px] text-white/60 font-medium font-inter leading-relaxed line-clamp-2">
+                {gem.description}
               </p>
             </div>
           </div>

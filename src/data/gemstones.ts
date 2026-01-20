@@ -8,7 +8,7 @@ export const gemstones: Gemstone[] = [
     type: 'Sapphire',
     priceFrom: 20000,
     image: '/images/yellow-sapphire.jpg', // Placeholder
-    description: 'Unheated Yellow Sapphire from Sri Lanka, known for its vibrant clarity and brilliance.',
+    description: 'Unheated Yellow Sapphire',
     specs: {
       origin: 'Sri Lanka (Ceylon)',
       carat: 4.5,
@@ -24,7 +24,7 @@ export const gemstones: Gemstone[] = [
     type: 'Emerald',
     priceFrom: 12000,
     image: '/images/emerald.jpg',
-    description: 'Muzo Green, Minor Oil. A testament to nature\'s purest green.',
+    description: 'MUZO Mine, Vivid Green',
     specs: {
       origin: 'Colombia (Muzo)',
       carat: 2.8,
@@ -40,7 +40,7 @@ export const gemstones: Gemstone[] = [
     type: 'Ruby',
     priceFrom: 15000,
     image: '/images/ruby.jpg',
-    description: 'Unheated Pigeon Blood Ruby. The most coveted red in the gemstone world.',
+    description: 'Unheated, Pigeon Blood',
     specs: {
       origin: 'Burma (Myanmar)',
       carat: 1.5,
@@ -56,7 +56,7 @@ export const gemstones: Gemstone[] = [
     type: 'Sapphire',
     priceFrom: 25000,
     image: '/images/blue-sapphire.jpg',
-    description: 'Royal Blue, Sri Lanka. Deep, velvety blue saturation.',
+    description: 'Royal Blue, Sri Lanka',
     specs: {
       origin: 'Sri Lanka',
       carat: 5.2,
@@ -72,7 +72,7 @@ export const gemstones: Gemstone[] = [
     type: 'Sapphire',
     priceFrom: 35000,
     image: '/images/padparadscha.jpg',
-    description: 'Unheated Pinkish-Orange. A rare sunset hue.',
+    description: 'Unheated Yellow Sapphire',
     specs: {
       origin: 'Sri Lanka',
       carat: 3.1,

@@ -33,6 +33,7 @@ export default function GemstoneDetail({ params }: { params: { slug: string } })
                src={gem.image} 
                alt={gem.name} 
                fill 
+               unoptimized
                className="object-contain p-12 drop-shadow-2xl hover:scale-105 transition-transform duration-700"
                priority
              />
