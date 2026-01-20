@@ -1,26 +1,83 @@
 @import "tailwindcss";
 
+@theme {
+  --font-serif: var(--font-inter), sans-serif;
+  --font-sans: var(--font-inter), sans-serif;
+
+  --color-background: var(--bg);
+  --color-foreground: var(--text);
+  
+  --color-primary: var(--gold);
+  --color-muted: var(--muted);
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Colors */
+  --bg: #030a13; /* Deep navy almost black */
+  --panel: rgba(255, 255, 255, 0.03);
+  --panel-hover: rgba(255, 255, 255, 0.06);
+  --gold: #D6B15E;
+  --text: #F8FAFC;
+  --muted: #94A3B8;
+  --border: rgba(214, 177, 94, 0.2);
+  --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  background-image: 
+    radial-gradient(circle at 50% 0%, rgba(13, 33, 56, 0.6) 0%, transparent 60%),
+    radial-gradient(circle at 90% 90%, rgba(214, 177, 94, 0.03) 0%, transparent 40%);
+  min-height: 100vh;
+}
+
+@utility glass {
+  background-color: var(--panel);
+  backdrop-filter: blur(4px);
+  border: 1px solid var(--border);
+}
+
+@utility gold-outline {
+  border: 1px solid var(--gold);
+  color: var(--gold);
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: var(--gold);
+    color: var(--bg);
+  }
+}
+
+@utility gold-solid {
+  background-color: var(--gold);
+  color: var(--bg);
+  transition: all 0.3s;
+  
+  &:hover {
+    background-color: #bd9b4c;
+  }
+}
+
+@utility text-gradient-gold {
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  background-image: linear-gradient(to right, #F0D58C, #D6B15E, #B08D43);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gold);
 }
