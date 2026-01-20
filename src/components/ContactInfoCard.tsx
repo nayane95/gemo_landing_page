@@ -19,8 +19,8 @@ export default function ContactInfoCard({ info }: { info: ContactInfo }) {
       </div>
       <div>
         <h4 className="text-white font-serif text-lg mb-2">{info.title}</h4>
-        <p className="text-[var(--gold)] text-sm font-medium mb-1">{info.details}</p>
-        <p className="text-[var(--muted)] text-xs">{info.subDetails}</p>
+        <p className="text-[var(--gold)] text-sm font-medium mb-1">{info.details}</p>        
+        <p className="text-[var(--muted)] text-xs md:text-sm">{info.subDetails}</p>
       </div>
     </div>
   );

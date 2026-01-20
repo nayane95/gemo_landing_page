@@ -11,7 +11,7 @@ export default function Footer() {
             <Link href="/" className="text-xl font-serif font-bold tracking-widest text-(--gold) mb-6 block">
               LOGO
             </Link>
-            <p className="text-(--muted) text-sm leading-relaxed">
+            <p className="text-(--muted)/70 text-sm leading-relaxed">
               The world's premier destination for investment-grade colored gemstones. Authenticity guaranteed.
             </p>
           </div>

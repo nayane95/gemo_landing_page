@@ -39,8 +39,8 @@ export const contactInfo: ContactInfo[] = [
   {
     id: '3',
     title: 'Private Email',
-    details: 'concierge@luxurygems.com',
-    subDetails: 'Strictly confidential',
+    details: 'company@gjhdks.gmail.com',
+    subDetails: '',
     type: 'email',
   },
 ];

@@ -50,118 +50,132 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="bg-(--panel) border border-[rgba(255,255,255,0.05)] p-8 md:p-12 rounded-lg">
-      <h3 className="text-xl font-serif text-white mb-8">Private Consultation Request</h3>
-      
-      <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
-        {/* Full Name */}
-        <div>
-          <input
-            {...register('fullName')}
-            placeholder="Full Name"
-            className={cn(
-              "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
-              errors.fullName && "border-red-500"
-            )}
-          />
-          {errors.fullName && <p className="text-red-500 text-xs mt-1">{errors.fullName.message}</p>}
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Contact Number */}
+    <div className="max-w-2xl mx-auto">
+      {/* Form Container with thin blue border */}
+      <div className="bg-[#02101b] border border-[#156c92]/40 p-8 md:p-10 rounded-lg mb-8">
+        <h3 className="text-xl font-bold text-white mb-8 tracking-tight font-inter">
+          Private Consultation Request
+        </h3>
+        
+        <form onSubmit={handleSubmit(onSubmit)} className="space-y-12">
+          {/* Full Name */}
           <div>
             <input
-              {...register('contactNumber')}
-              placeholder="Contact Number"
+              {...register('fullName')}
+              placeholder="Full Name"
               className={cn(
-                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
-                errors.contactNumber && "border-red-500"
+                "w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#156c92] transition-colors",
+                errors.fullName && "border-red-500"
               )}
             />
-            {errors.contactNumber && <p className="text-red-500 text-xs mt-1">{errors.contactNumber.message}</p>}
           </div>
 
-          {/* Email */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            {/* Contact Number */}
+            <div>
+              <input
+                {...register('contactNumber')}
+                placeholder="Contact Number"
+                className={cn(
+                  "w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#156c92] transition-colors",
+                  errors.contactNumber && "border-red-500"
+                )}
+              />
+            </div>
+
+            {/* Email */}
+            <div>
+              <input
+                {...register('email')}
+                placeholder="E mail Address"
+                className={cn(
+                  "w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#156c92] transition-colors",
+                  errors.email && "border-red-500"
+                )}
+              />
+            </div>
+          </div>
+
+          {/* Select Area of Interest */}
+          <div className="relative group">
+            <select
+              {...register('areaOfInterest')}
+              className="w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white/80 text-sm focus:outline-none focus:border-[#156c92] transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">Select Area Of Interest</option>
+              <option value="Investment Grade">Investment Grade Gems</option>
+              <option value="Bespoke Jewelry">Bespoke Jewelry</option>
+              <option value="Loose Stones">Loose Stones</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/30 group-focus-within:text-[#156c92]">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* Select Budget Range */}
+          <div className="relative group">
+            <select
+              {...register('budgetRange')}
+              className="w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white/80 text-sm focus:outline-none focus:border-[#156c92] transition-colors appearance-none cursor-pointer"
+            >
+              <option value="">Select Budget Range</option>
+              <option value="10k-50k">$10,000 - $50,000</option>
+              <option value="50k-100k">$50,000 - $100,000</option>
+              <option value="100k+">$100,000+</option>
+            </select>
+            <div className="absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none text-white/30 group-focus-within:text-[#156c92]">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 1L6 6L11 1" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+              </svg>
+            </div>
+          </div>
+
+          {/* Text Areas */}
           <div>
-            <input
-              {...register('email')}
-              placeholder="Email Address"
-              className={cn(
-                "w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors",
-                errors.email && "border-red-500"
-              )}
+            <textarea
+              {...register('inquiry')}
+              placeholder="Your Inquire (Optional)"
+              className="w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#156c92] transition-colors min-h-[100px] resize-none"
             />
-            {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
           </div>
-        </div>
 
-        {/* Selects */}
-        <div>
-          <select
-            {...register('areaOfInterest')}
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors"
-          >
-            <option value="">Select Area Of Interest</option>
-            <option value="Investment Grade">Investment Grade Gems</option>
-            <option value="Bespoke Jewelry">Bespoke Jewelry</option>
-            <option value="Loose Stones">Loose Stones</option>
-          </select>
-          {errors.areaOfInterest && <p className="text-red-500 text-xs mt-1">{errors.areaOfInterest.message}</p>}
-        </div>
+          <div>
+            <textarea
+              {...register('additionalReq')}
+              placeholder="Additional Requirement (Optional)"
+              className="w-full bg-[#05111f] border border-[#1e3a4e] rounded-md p-4 text-white text-sm placeholder:text-white/20 focus:outline-none focus:border-[#156c92] transition-colors min-h-[100px] resize-none"
+            />
+          </div>
+        </form>
+      </div>
 
-        <div>
-          <select
-            {...register('budgetRange')}
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors"
-          >
-            <option value="">Select Budget Range</option>
-            <option value="10k-50k">$10,000 - $50,000</option>
-            <option value="50k-100k">$50,000 - $100,000</option>
-            <option value="100k+">$100,000+</option>
-          </select>
-          {errors.budgetRange && <p className="text-red-500 text-xs mt-1">{errors.budgetRange.message}</p>}
-        </div>
-
-        {/* Text Areas */}
-        <div>
-          <textarea
-            {...register('inquiry')}
-            placeholder="Your Inquiry (Optional)"
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors min-h-[100px]"
-          />
-        </div>
-
-        <div>
-          <textarea
-            {...register('additionalReq')}
-            placeholder="Additional Requirement (Optional)"
-            className="w-full bg-[#05111f] border border-[#1e293b] rounded p-4 text-white placeholder:text-slate-500 focus:outline-none focus:border-(--gold) transition-colors min-h-[100px]"
-          />
-        </div>
-
-        {/* Submit */}
+      {/* Exterior Submit Button */}
+      <div className='flex justify-center'>
         <button
-          type="submit"
+          onClick={handleSubmit(onSubmit)}
           disabled={isSubmitting}
-          className="w-full bg-(--gold) text-black font-bold uppercase tracking-widest py-4 rounded flex items-center justify-center gap-2 hover:bg-[#bd9b4c] transition-colors disabled:opacity-70"
+          className="group bg-[#ffc505] text-[#000000] font-bold uppercase tracking-widest py-5 rounded-lg flex items-center justify-center gap-3 hover:bg-[#ffc505]/90 transition-all active:scale-[0.98] disabled:opacity-70 disabled:cursor-not-allowed md:mt-20 px-20"
         >
           {isSubmitting ? (
             <>
-              <Loader2 className="animate-spin" /> Processing
+              <Loader2 className="animate-spin" size={24} /> Processing
             </>
           ) : (
             <>
-              Request Private Consultation <ArrowRight size={20} />
+              REQUEST PRIVATE CONSULTATION <ArrowRight size={24} className="group-hover:translate-x-1 transition-transform" strokeWidth={3} />
             </>
           )}
         </button>
+      </div>
 
-        <div className="text-center">
-          <p className="text-xs text-(--muted) flex items-center justify-center gap-2">
-            <Lock size={12} /> All inquiries are kept strictly confidential
-          </p>
-        </div>
-      </form>
+      {/* Privacy Footer */}
+      <div className="mt-6 text-center items-center w-full">
+        <p className="text-sm text-(--muted)/60 flex items-center justify-center gap-2 font-medium tracking-tight">
+          <Lock size={14} className="opacity-80" /> All inquires are kept strictly confidential
+        </p>
+      </div>
     </div>
   );
 }

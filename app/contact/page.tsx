@@ -16,7 +16,7 @@ export default function ContactPage() {
           
           {/* Left Column */}
           <div>
-            <h1 className="text-4xl md:text-5xl font-serif text-white mb-4 leading-tight">
+            <h1 className="text-4xl md:text-5xl font-serif text-white mb-4 leading-tight font-semibold">
               Begin Your Legacy : <br />
               <span className="text-[var(--muted)]">Private concierge services</span>
             </h1>
